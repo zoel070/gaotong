@@ -3,10 +3,10 @@ const PAGE = {
     navigatorBarIdArr: ['intro-section', 'course-section', 'teacher-section', 'product-section', 'qual-section'],
     navigatorBarActiveId: '',
     navigatorBarFixed: false,
-    navigatorBarFixedOffset: 424,   
-    navigatorBarHeight: 70,       
+    navigatorBarFixedOffset: 424,
+    navigatorBarHeight: 70,
     duration: 500,
-    itemWidth: 225,       
+    itemWidth: 225,
     translateX: 0,        //每一次记录，必须有
     index: 0,
     islock: false,
@@ -41,26 +41,27 @@ const PAGE = {
   },
   goIndex: function (index) {
     if (PAGE.data.islock == true) {
-      if (index == -1) {
-        index = 3
-      }
-      if (index == 4) {
-        index = 0
-      }
-      let swiperDuration = PAGE.data.duration;
-      let swiperItemWidth = PAGE.data.itemWidth;
-      let beginTranslateX = PAGE.data.translateX;
-      let endTranslateX = - (swiperItemWidth * index);
-      let teacherBanner = document.getElementsByClassName('teacher-banner')[0];
-      PAGE.animateTo(beginTranslateX, endTranslateX, swiperDuration, function (value) {
-        teacherBanner.style.transform = `translateX(${value}px)`;
-        PAGE.data.islock = false;
-      }, function (value) {
-        teacherBanner.style.transform = `translateX(${value}px)`;
-        PAGE.data.index = index;
-        PAGE.data.translateX = value;
-      })
+      return
     }
+    if (index == -1) {
+      index = 3
+    }
+    if (index == 4) {
+      index = 0
+    }
+    let swiperDuration = PAGE.data.duration;
+    let swiperItemWidth = PAGE.data.itemWidth;
+    let beginTranslateX = PAGE.data.translateX;
+    let endTranslateX = - (swiperItemWidth * index);
+    let teacherBanner = document.getElementsByClassName('teacher-banner')[0];
+    PAGE.animateTo(beginTranslateX, endTranslateX, swiperDuration, function (value) {
+      teacherBanner.style.transform = `translateX(${value}px)`;
+    }, function (value) {
+      teacherBanner.style.transform = `translateX(${value}px)`;
+      PAGE.data.index = index;
+      PAGE.data.translateX = value;
+      PAGE.data.islock = false;
+    })
   },
   animateTo: function (begin, end, duration, changeCallback, finishCallback) {
     let startTime = Date.now();
