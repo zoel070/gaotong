@@ -1,0 +1,549 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    font-size: 12px;
+
+}
+
+
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20%;
+    height: 74px;
+    align-items: center;
+}
+
+.header-logo {
+    width: 112px;
+    height: 41px;
+}
+
+.header-user {
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+}
+
+
+
+.banner-container {
+    position: relative;
+    margin-bottom: -20px;
+    z-index: -1;
+}
+
+
+.banner-container img {
+    width: 100%;
+}
+
+
+.banner-title {
+    position: absolute;
+    top: 130px;
+    left: 35%;
+    font-size: 40px;
+    margin-top: 30px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 11px;
+    text-shadow: 0px 1px 0px rgba(4, 0, 0, 0.1);
+}
+
+.nav-container {
+    background-color: #153188;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-wrapper {
+    height: 70px;
+}
+
+.nav-container.fixed-top {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #153188;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    cursor: pointer;
+    width: 192px;
+    height: 70px;
+    font-size: 16px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.nav-item.active {
+    background-color: rgb(255, 255, 255, 0.1)
+}
+
+
+.page-mainer {
+    margin: 0 25%;
+}
+
+.section-title {
+    margin: 60px auto 30px;
+}
+
+.intro-cont {
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: #333333;
+    line-height: 30px;
+}
+
+.course-video {
+    width: 100%;
+}
+
+.dragon-title {
+    margin: 30px auto 0;
+    font-size: 18px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: #333333;
+    line-height: 11px;
+}
+
+.dragon-subtitle {
+    margin: 20px auto;
+    font-size: 12px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #999999;
+    line-height: 11px;
+}
+
+.dragon-wrapper {
+    display: flex;
+}
+
+.dragon-list {
+    width: 700px;
+    flex: none;
+}
+
+
+.dragon-class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 40px;
+    background: #F7F7F7;
+    box-shadow: 0px 1px 0px 0px #E4E4E4;
+}
+
+.dragon-class.first {
+    border-top: 1px solid #d8d6d6;
+
+}
+
+.dragon-class-box {
+    display: flex;
+}
+
+.dragon-class-arrow {
+    cursor: pointer;
+    width: 15px;
+    height: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.dragon-class-arrow.active {
+    transform: rotate(-90deg);
+}
+
+.dragon-small-list-first {
+    height: 40px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.dragon-small-list-second {
+    height: 120px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.dragon-small-list-third {
+    height: 240px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.dragon-small-list-first.active {
+    height: 0;
+}
+
+.dragon-small-list-second.active {
+    height: 0;
+}
+
+.dragon-small-list-third.active {
+    height: 0;
+}
+
+.dragon-class-name {
+    margin-left: 10px;
+    font-size: 14px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #333333;
+    line-height: 11px;
+}
+
+
+.small-list-box {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    padding: 0 30px 0 60px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d8d6d6;
+    font-size: 12px;
+    font-family: FZLTHK;
+    font-weight: normal;
+    color: #666666;
+}
+
+.dragon-inform {
+    margin-left: 30px;
+}
+
+.dragon-item {
+    cursor: pointer;
+}
+
+.dragon-inform-title {
+    font-size: 16px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 20px;
+
+}
+
+.dragon-inform-item {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.dragon-inform-sub {
+    width: 48px;
+    font-size: 12px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #999999;
+    margin: 10px 10px 10px 0;
+}
+
+.dragon-inform-cont {
+    font-size: 12px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #666666;
+    line-height: 18px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.dragon-inform-tag {
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 2px 6px;
+    background: #F7F7F7;
+    border-radius: 2px;
+}
+
+.dragon-inform-line {
+    height: 1px;
+    background: #F5F5F5;
+    margin: 20px 0;
+}
+
+.dragon-cont-down {
+    display: flex;
+    margin-top: 10px;
+    position: relative;
+}
+
+.dragon-cont-card {
+    position: absolute;
+    top: 25px;
+    left: -15px;
+    display: none;
+}
+
+.dragon-cont-code:hover+img {
+    display: inline-block;
+}
+
+.dragon-cont-code {
+    padding: 4px 8px;
+    font-size: 12px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: #00A8FF;
+    border-radius: 2px 2px 2px 2px;
+    margin-right: 10px;
+}
+
+
+
+.dragon-inform-item.last {
+    flex-wrap: nowrap;
+}
+
+.teacher-banner-wrapper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+}
+
+.teacher-right {
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.teacher-left {
+    position: absolute;
+    left:0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.teacher-banner {
+    width: 900px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.teacher-member-box {
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+    width: 195px;
+}
+
+/* 225 */
+
+.teacher-member-name {
+    font-size: 14px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #333333;
+    line-height: 11px;
+    margin: 20px auto;
+}
+
+.teacher-member-sub {
+    font-size: 12px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #999999;
+    line-height: 18px;
+}
+
+
+.teacher-member-desc {
+    font-size: 12px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #666666;
+    line-height: 18px;
+    word-break: break-all;
+}
+
+.product-container {
+    display: flex;
+}
+
+
+
+.product-cont {
+    margin-left: 20px;
+
+}
+
+.product-cont-title {
+    font-size: 20px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: #333333;
+    line-height: 11px;
+}
+
+.product-cont-sub {
+    font-size: 13px;
+    font-family: FZLTHK;
+    font-weight: normal;
+    color: #666666;
+    line-height: 22px;
+    margin: 20px auto;
+}
+
+.product-cont-tab {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.product-cont-buy {
+    width: 130px;
+    height: 40px;
+    background: #00A8FF;
+    border-radius: 2px 2px 2px 2px;
+    font-size: 15px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.product-cont-more {
+    width: 130px;
+    height: 40px;
+    background: rgba(0, 168, 255, 0);
+    border: 1px solid #00A8FF;
+    border-radius: 2px 2px 2px 2px;
+    font-size: 15px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #00A8FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-cont-rela {
+    display: flex;
+    align-items: center;
+}
+
+.product-rela {
+    font-size: 15px;
+    font-family: FZLTHK;
+    font-weight: normal;
+    color: #666666;
+    line-height: 11px;
+}
+
+.product-cont-item {
+    height: 30px;
+    background: #CAEAEF;
+    font-size: 12px;
+    font-family: FZLTHK;
+    font-weight: normal;
+    color: #1C7C89;
+    padding: 0 15px;
+    border-radius: 30px;
+    line-height: 30px;
+    margin: 0 20px;
+}
+
+
+.product-container {
+    border-top: 1px solid #d8d6d6;
+    border-bottom: 1px solid #d8d6d6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.qual-banner-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 60px 60px 60px;
+}
+
+.qual-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qual-banner-title {
+    font-size: 14px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #333333;
+    line-height: 11px;
+    margin: 30px auto 20px;
+}
+
+.qual-banner-sub {
+    font-size: 12px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #999999;
+    line-height: 11px;
+}
+
+.qual-banner-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: #00A8FF;
+    border-radius: 2px 2px 2px 2px;
+    font-size: 14px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
