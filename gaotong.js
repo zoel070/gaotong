@@ -10,9 +10,30 @@ const PAGE = {
     translateX: 0,        //每一次记录，必须有
     index: 0,
     islock: false,
+    len: 5,
   },
   init: function () {
+    this.clone();
     this.bind();
+  },
+  clone: function () {
+    let swiperItemWidth = PAGE.data.itemWidth;
+    let teacherBanner = document.getElementsByClassName('teacher-banner')[0];
+    let len = teacherBanner.children.length;
+    PAGE.data.len = len;
+    let arr = []
+    let index = PAGE.data.index;
+    for (let i = 0; i < len; i++) {
+      let item = teacherBanner.children[i].cloneNode(true);
+      arr.push(item)
+    }
+    for (let i = 0; i < len; i++) {
+      let item = teacherBanner.children[i].cloneNode(true);
+      arr.push(item)
+    }
+    teacherBanner.prepend(...arr)
+    PAGE.data.translateX = -(swiperItemWidth * len + swiperItemWidth * index);   //因为在头部克隆了一个，所以默认先偏一个，想看第index个就偏index个
+    PAGE.goIndex(index)
   },
   bind: function () {
     window.addEventListener('scroll', this.refreshNavigator);
@@ -43,20 +64,22 @@ const PAGE = {
     if (PAGE.data.islock == true) {
       return
     }
-    if (index == -1) {
-      index = 3
-    }
-    if (index == 4) {
-      index = 0
-    }
     let swiperDuration = PAGE.data.duration;
     let swiperItemWidth = PAGE.data.itemWidth;
     let beginTranslateX = PAGE.data.translateX;
-    let endTranslateX = - (swiperItemWidth * index);
+    let endTranslateX = - (swiperItemWidth * PAGE.data.len + swiperItemWidth * index);
     let teacherBanner = document.getElementsByClassName('teacher-banner')[0];
     PAGE.animateTo(beginTranslateX, endTranslateX, swiperDuration, function (value) {
       teacherBanner.style.transform = `translateX(${value}px)`;
     }, function (value) {
+      if (index == PAGE.data.len) {
+        index = 0
+        value = - (swiperItemWidth * PAGE.data.len + swiperItemWidth * 0)
+      }
+      if (index == -PAGE.data.len) {
+        index = 0
+        value = - (swiperItemWidth * PAGE.data.len + swiperItemWidth * 0)
+      }
       teacherBanner.style.transform = `translateX(${value}px)`;
       PAGE.data.index = index;
       PAGE.data.translateX = value;
